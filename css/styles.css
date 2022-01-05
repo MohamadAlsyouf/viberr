@@ -1,0 +1,38 @@
+body {
+  background-color: #0d1e2f;
+  font-family: "DM Sans", sans-serif;
+}
+
+.dark-orange {
+  background-color: #ee8132;
+}
+
+.header-name {
+  margin: 0;
+  padding-top: 10px;
+  color: #1e5192;
+  font-size: 45px;
+}
+
+.page-title {
+  color: #f59a4f;
+  font-size: 40px;
+}
+
+.image-padding {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 50px;
+}
+
+.img-border-radius {
+  border-radius: 10px;
+}
+
+.genre-link {
+  font-size: 24px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #f59a4f;
+  font-family: "DM Sans", sans-serif;
+}
