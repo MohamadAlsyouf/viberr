@@ -37,11 +37,9 @@
     max-width: 900px;
   }
 
-  /* .column-full,
-  .column-third,
-  .column-half {
-    padding: 0 0.75rem;
-  } */
+  .page-title {
+    text-align: center;
+  }
 
   .column-third,
   .column-half {
