@@ -42,11 +42,13 @@ body {
 .search-button {
   border: none;
   height: 100%;
-  margin-left: -10px;
+  font-size: 21px;
+  margin-left: -45px;
   background-color: #f59a4f;
   vertical-align: top;
   border-radius: 0 5px 5px 0;
   color: #0d1e2f;
+  cursor: pointer;
 }
 
 .search-box {
@@ -65,4 +67,5 @@ body {
 
 .vibes-message {
   color: #f59a4f;
+  margin-top: 20px;
 }
