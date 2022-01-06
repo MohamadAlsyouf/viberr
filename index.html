@@ -6,8 +6,8 @@
   <title>AJAX Project</title>
   <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -24,55 +24,65 @@
     </div>
   </header>
   <main>
+    <div class="container">
 
-    <div data-view="genres">
-      <div class="container">
+      <div data-view="genres" class="view">
         <div class="row">
           <div class="column-full">
             <h3 class="page-title">Genre</h3>
           </div>
         </div>
         <div class="row">
-          <div class="column-half image-padding">
-            <a href="#"><img class="column-full img-border-radius" src="images/classic-genre.jpeg" alt="classical-music"></a>
-            <a class="column-half genre-link" href="#">Classical</a>
+          <div class="column-half image-padding genre">
+            <img class="column-full img-border-radius" src="images/classic-genre.jpeg" alt="classical-music">
+            <p class="column-half genre-name">Classical</p>
           </div>
-          <div class="column-half image-padding">
-            <a href="#"><img class="column-full img-border-radius" src="images/jazz-genre.png" alt="jazz-music"></a>
-            <a class="column-full genre-link" href="#">Jazz</a>
+          <div class="column-half image-padding genre">
+            <img class="column-full img-border-radius" src="images/jazz-genre.png" alt="jazz-music">
+            <p class="column-half genre-name">Jazz</p>
           </div>
-          <div class="column-half image-padding">
-            <a href="#"><img class="column-full img-border-radius" src="images/rock-genre.jpg" alt="rock-music"></a>
-            <a class="column-full genre-link" href="#">Rock</a>
+          <div class="column-half image-padding genre">
+            <img class="column-full img-border-radius" src="images/rock-genre.jpg" alt="rock-music">
+            <p class="column-half genre-name">Rock</p>
           </div>
-          <div class="column-half image-padding">
-            <a href="#"><img class="column-full img-border-radius" src="images/indie-genre.jpg" alt="indie-music"></a>
-            <a class="column-full genre-link" href="#">Indie</a>
+          <div class="column-half image-padding genre">
+            <img class="column-full img-border-radius" src="images/indie-genre.jpg" alt="indie-music">
+            <p class="column-half genre-name">Indie</p>
           </div>
-          <div class="column-half image-padding">
-            <a href="#"><img class="column-full img-border-radius" src="images/rap-genre.jpg" alt="rap-music"></a>
-            <a class="column-full genre-link" href="#">Rap</a>
+          <div class="column-half image-padding genre">
+            <img class="column-full img-border-radius" src="images/rap-genre.jpg" alt="rap-music">
+            <p class="column-half genre-name">Rap</p>
           </div>
-          <div class="column-half image-padding">
-            <a href="#"><img class="column-full img-border-radius" src="images/other-genre.jpg" alt="other-music"></a>
-            <a class="column-full genre-link" href="#">Other</a>
+          <div class="column-half image-padding genre">
+            <img class="column-full img-border-radius" src="images/other-genre.jpg" alt="other-music">
+            <p class="column-half genre-name">Other</p>
           </div>
         </div>
       </div>
+      <div data-view="artist-search">
+        <div class="row">
+          <div class="column-full">
+            <h3 class="page-title">Artist Search</h3>
+          </div>
+        </div>
+        <form>
+          <div class="row">
+            <div class="column-full text-align-center">
+              <input type="text" placeholder="enter artist or band..." class=" search-box" required="required" name="q">
+              <input type="submit" class="search-button" value="Search">
+            </div>
+          </div>
+        </form>
+        <div class="row">
+          <div class="column-full text-align-center">
+            <p class="vibes-message column-full">Add Some Vibes To Your Archives</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-    <div data-view="artist-search">
-
-    </div>
-
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
-
-
-<!-- <div class="row">
-  <img class="image-left column-half" src="images/classic-genre.jpeg" alt="classical-music">
-  <img class="image-right column-half" src="images/jazz-genre.png" alt="jazz-music">
-</div> -->
