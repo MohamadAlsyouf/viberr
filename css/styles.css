@@ -74,3 +74,13 @@ body {
   margin-top: 20px;
   font-size: 21px;
 }
+
+.artist-name {
+  color: #f59a4f;
+  font-size: 21px;
+}
+
+.artist-ul {
+  list-style: none;
+  padding: 0;
+}

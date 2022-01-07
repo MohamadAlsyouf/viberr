@@ -9,9 +9,7 @@
   visibility: visible;
 }
 
-.container,
-.genre-container,
-.search-container {
+.container {
   max-width: 575px;
   margin: 0 auto;
   padding: 0 1.5rem;
@@ -23,8 +21,7 @@
 }
 
 .column-full,
-.column-third,
-.column-sixty {
+.column-third {
   width: 100%;
 }
 
@@ -53,7 +50,7 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 900px;
+    max-width: 1000px;
   }
 
   .page-title {
@@ -73,4 +70,12 @@
     color: #0d1e2f;
     width: 50%;
   }
+
+  .video-box {
+    padding: 0 15px;
+  }
+
+  /* .results {
+    flex-wrap: nowrap;
+  } */
 }
