@@ -1,0 +1,71 @@
+body {
+  background-color: #0d1e2f;
+  font-family: "DM Sans", sans-serif;
+}
+
+.dark-orange {
+  background-color: #ee8132;
+}
+
+.header-name {
+  margin: 0;
+  padding-top: 10px;
+  color: #1e5192;
+  font-size: 45px;
+}
+
+.page-title {
+  color: #f59a4f;
+  font-size: 40px;
+  margin: 40px 5px 25px;
+}
+
+.genre:hover img {
+  outline: 3px solid #ee8132;
+  cursor: pointer;
+}
+
+.genre:hover p {
+  color: #ee8132;
+  cursor: pointer;
+}
+
+.genre-name {
+  font-size: 24px;
+  margin: 0;
+  font-weight: 500;
+  text-decoration: none;
+  color: #f59a4f;
+  font-family: "DM Sans", sans-serif;
+}
+
+.search-button {
+  border: none;
+  height: 100%;
+  font-size: 21px;
+  margin-left: -4px;
+  background-color: #f59a4f;
+  vertical-align: top;
+  border-radius: 0 5px 5px 0;
+  color: #0d1e2f;
+  cursor: pointer;
+}
+
+.search-box {
+  border: none;
+  font-size: 20px;
+  border-radius: 5px 0 0 5px;
+  padding-left: 10px;
+  color: #0d1e2f;
+  width: 75%;
+  height: 40px;
+}
+
+.search-box:focus {
+  outline-color: #ee8132;
+}
+
+.vibes-message {
+  color: #f59a4f;
+  margin-top: 20px;
+}
