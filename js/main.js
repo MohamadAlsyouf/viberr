@@ -18,6 +18,8 @@ function handleSubmit(event) {
   xhr.open('GET', 'https://lfz-cors.herokuapp.com/?url=' + targetUrl + name);
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
+    // console.log(xhr.status);
+    // console.log(xhr.response);
   });
   xhr.send();
 }
