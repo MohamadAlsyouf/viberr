@@ -43,7 +43,7 @@ body {
   border: none;
   height: 100%;
   font-size: 21px;
-  margin-left: -45px;
+  margin-left: -4px;
   background-color: #f59a4f;
   vertical-align: top;
   border-radius: 0 5px 5px 0;
@@ -54,15 +54,15 @@ body {
 .search-box {
   border: none;
   font-size: 20px;
-  border-radius: 5px;
+  border-radius: 5px 0 0 5px;
   padding-left: 10px;
   color: #0d1e2f;
-  width: 85%;
+  width: 75%;
   height: 40px;
 }
 
 .search-box:focus {
-  outline: 2px solid #ee8132;
+  outline-color: #ee8132;
 }
 
 .vibes-message {
