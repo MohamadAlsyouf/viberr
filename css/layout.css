@@ -5,8 +5,9 @@
 }
 
 .view {
-  /* display: contents; */
-  visibility: visible;
+  display: contents;
+
+  /* visibility: visible; */
 }
 
 .container {
@@ -74,8 +75,4 @@
   .video-box {
     padding: 0 15px;
   }
-
-  /* .results {
-    flex-wrap: nowrap;
-  } */
 }

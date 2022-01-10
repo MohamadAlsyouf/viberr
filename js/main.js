@@ -1,19 +1,21 @@
-var $genreList = document.querySelector('.genre-list');
-var $searchPage = document.querySelector('.search-page');
+var $genreList = document.querySelector('#genre-list');
+var $searchPage = document.querySelector('#search-page');
 var $searchForm = document.querySelector('#search-form');
 var $vibesMessage = document.querySelector('.vibes-message');
 var $resultsRow = document.querySelector('.results-row');
 
-function handleGenrePress(event) {
+// view swapping function
+function swapView(event) {
   var dataViewValue = event.target.getAttribute('data-view');
   if (dataViewValue === 'artist-search') {
     $genreList.className = 'hidden';
     $searchPage.className = 'view';
   }
 }
-document.addEventListener('click', handleGenrePress);
 
+// handle submit function
 function handleSubmit(event) {
+  event.preventDefault();
   $vibesMessage.textContent = 'Similar Vibes';
   var name = $searchForm.elements.q.value;
   var xhr = new XMLHttpRequest();
@@ -21,20 +23,15 @@ function handleSubmit(event) {
   xhr.open('GET', 'https://lfz-cors.herokuapp.com/?url=' + targetUrl + name);
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
-    data.artists = xhr.response.Similar.Results;
+    var similarArtists = xhr.response.Similar.Results;
+    data.artists = similarArtists;
     appendDOM(data.artists);
   });
   xhr.send();
 }
 
+// generate DOM function
 function generateArtistDOM(object) {
-  // var threeArtistFullColumn = document.createElement('div');
-  // threeArtistFullColumn.className = 'column-full';
-  // $li.appendChild(threeArtistFullColumn);
-
-  // var threeArtistRow = document.createElement('div');
-  // threeArtistRow.className = 'row';
-  // threeArtistFullColumn.appendChild(threeArtistRow);
 
   var artistBox = document.createElement('div');
   artistBox.className = 'column-third video-box';
@@ -42,7 +39,7 @@ function generateArtistDOM(object) {
 
   var artistName = document.createElement('p');
   artistName.className = 'artist-name';
-  artistName.textContent = object.Name; // Name maybe? instead of name
+  artistName.textContent = object.Name;
   artistBox.appendChild(artistName);
 
   var artistVideo = document.createElement('iFrame');
@@ -51,21 +48,26 @@ function generateArtistDOM(object) {
   artistVideo.setAttribute('src', object.yUrl);
   artistBox.appendChild(artistVideo);
 
+  return artistBox;
 }
 
+// append DOM function
 function appendDOM(object) {
-  if (object.yUrl === null) {
-    return;
-  }
+  var validArtists = 0;
   for (var i = 0; i < data.artists.length; i++) {
     if (data.artists[i].yUrl === null) {
+      continue;
+    } else {
+      validArtists++;
+      generateArtistDOM(data.artists[i]);
+    }
+    if (validArtists === 6) {
       return;
     }
-    generateArtistDOM(data.artists[i]);
-    // console.log(data.artists[i]);
   }
 }
 
 // event listeners
+document.addEventListener('click', swapView);
 $searchForm.addEventListener('submit', handleSubmit);
 document.addEventListener('DOMContentLoaded', appendDOM);

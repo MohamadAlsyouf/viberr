@@ -1,6 +1,6 @@
 /* exported data */
 var data = {
-  view: '',
+  view: 'genres',
   artists: [],
   editing: null,
   nextArtistId: 1
