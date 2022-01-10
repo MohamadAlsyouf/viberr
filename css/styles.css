@@ -12,6 +12,11 @@ body {
   padding-top: 10px;
   color: #1e5192;
   font-size: 45px;
+  cursor: pointer;
+}
+
+#logo-img {
+  cursor: pointer;
 }
 
 .page-title {

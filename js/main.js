@@ -1,15 +1,21 @@
-var $genreList = document.querySelector('#genre-list');
-var $searchPage = document.querySelector('#search-page');
 var $searchForm = document.querySelector('#search-form');
 var $vibesMessage = document.querySelector('.vibes-message');
 var $resultsRow = document.querySelector('.results-row');
+var $allViews = document.querySelectorAll('.view');
 
 // view swapping function
-function swapView(event) {
+
+function swapViews(event) {
   var dataViewValue = event.target.getAttribute('data-view');
-  if (dataViewValue === 'artist-search') {
-    $genreList.className = 'hidden';
-    $searchPage.className = 'view';
+  if (dataViewValue === null) {
+    return;
+  }
+  for (var i = 0; i < $allViews.length; i++) {
+    if ($allViews[i].getAttribute('data-view') === dataViewValue) {
+      $allViews[i].className = 'view';
+    } else {
+      $allViews[i].className = 'view hidden';
+    }
   }
 }
 
@@ -68,6 +74,6 @@ function appendDOM(object) {
 }
 
 // event listeners
-document.addEventListener('click', swapView);
+document.addEventListener('click', swapViews);
 $searchForm.addEventListener('submit', handleSubmit);
 document.addEventListener('DOMContentLoaded', appendDOM);
