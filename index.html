@@ -16,17 +16,16 @@
       <div class="row">
         <div class="column-full">
           <div class="row align-items-center">
-            <img src="images/viberr-logo.png" alt="viberr-logo">
-            <h2 class="header-name">Viberr</h2>
+            <img data-view="genres" id="logo-img" src="images/viberr-logo.png" alt="viberr-logo">
+            <h2 data-view="genres" class="header-name">Viberr</h2>
           </div>
         </div>
       </div>
     </div>
   </header>
   <main>
-
-    <div class="container" id="genre-container">
-      <div data-view="genres" class="genre-list view">
+    <div class="container">
+      <div data-view="genres" class="view">
         <div class="row">
           <div class="column-full">
             <h3 class="page-title">Genre</h3>
@@ -61,8 +60,8 @@
       </div>
     </div>
 
-    <div class="container" id="search-container">
-      <div data-view="artist-search" class="search-page hidden">
+    <div class="container">
+      <div data-view="artist-search" class="view hidden">
         <div class="row">
           <div class="column-full">
             <h3 class="page-title">Artist Search</h3>
@@ -80,10 +79,21 @@
           <div class="column-full text-align-center">
             <p class="vibes-message column-full">Add Some Vibes To Your Archives</p>
           </div>
+
+          <div class="column-full">
+            <ul class="artist-ul">
+              <li>
+                <div class="column-full">
+                  <div class="row results-row">
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </div>
-
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

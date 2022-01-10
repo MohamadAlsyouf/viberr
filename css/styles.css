@@ -12,6 +12,11 @@ body {
   padding-top: 10px;
   color: #1e5192;
   font-size: 45px;
+  cursor: pointer;
+}
+
+#logo-img {
+  cursor: pointer;
 }
 
 .page-title {
@@ -51,6 +56,10 @@ body {
   cursor: pointer;
 }
 
+.search-button:active {
+  background-color: #ee8132;
+}
+
 .search-box {
   border: none;
   font-size: 20px;
@@ -68,4 +77,15 @@ body {
 .vibes-message {
   color: #f59a4f;
   margin-top: 20px;
+  font-size: 21px;
+}
+
+.artist-name {
+  color: #f59a4f;
+  font-size: 21px;
+}
+
+.artist-ul {
+  list-style: none;
+  padding: 0;
 }
