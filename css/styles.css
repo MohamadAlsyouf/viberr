@@ -94,3 +94,7 @@ body {
 .fa-plus {
   cursor: pointer;
 }
+
+.fa-plus:hover {
+  color: #ee8132;
+}
