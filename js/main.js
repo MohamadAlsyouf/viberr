@@ -44,9 +44,13 @@ function generateArtistDOM(object) {
   $resultsRow.appendChild(artistBox);
 
   var artistName = document.createElement('p');
-  artistName.className = 'artist-name';
+  artistName.className = 'row artist-name';
   artistName.textContent = object.Name;
   artistBox.appendChild(artistName);
+
+  var plusIcon = document.createElement('i');
+  plusIcon.className = 'fas fa-plus';
+  artistName.appendChild(plusIcon);
 
   var artistVideo = document.createElement('iFrame');
   artistVideo.className = 'column-full';
