@@ -1,22 +1,43 @@
 var $searchForm = document.querySelector('#search-form');
 var $vibesMessage = document.querySelector('.vibes-message');
 var $resultsRow = document.querySelector('.results-row');
-var $allViews = document.querySelectorAll('.view');
+var $views = document.querySelectorAll('.view');
+var $genreBox = document.querySelector('.genre');
+var $navLogo = document.querySelector('#logo-img');
+var $appName = document.querySelector('.app-name');
 
 // view swapping function
 
-function swapViews(event) {
-  var dataViewValue = event.target.getAttribute('data-view');
-  if (dataViewValue === null) {
-    return;
-  }
-  for (var i = 0; i < $allViews.length; i++) {
-    if ($allViews[i].getAttribute('data-view') === dataViewValue) {
-      $allViews[i].className = 'view';
+// function swapViews(event) {
+//   var dataViewValue = event.target.getAttribute('data-view');
+//   if (dataViewValue === null) {
+//     return;
+//   }
+//   for (var i = 0; i < $allViews.length; i++) {
+//     if ($allViews[i].getAttribute('data-view') === dataViewValue) {
+//       $allViews[i].className = 'view';
+//     } else {
+//       $allViews[i].className = 'view hidden';
+//     }
+//   }
+// }
+
+function swapViews(view) {
+  for (var i = 0; i < $views.length; i++) {
+    if ($views[i].getAttribute('data-view') === view) {
+      $views[i].classList.remove('hidden');
     } else {
-      $allViews[i].className = 'view hidden';
+      $views[i].classList.add('hidden');
     }
   }
+}
+
+function showArtistSearch() {
+  swapViews('artist-search');
+}
+
+function showHomePage() {
+  swapViews('home-page');
 }
 
 // handle submit function
@@ -78,6 +99,8 @@ function appendDOM(object) {
 }
 
 // event listeners
-document.addEventListener('click', swapViews);
 $searchForm.addEventListener('submit', handleSubmit);
 document.addEventListener('DOMContentLoaded', appendDOM);
+$genreBox.addEventListener('click', showArtistSearch);
+$navLogo.addEventListener('click', showHomePage);
+$appName.addEventListener('click', showHomePage);
