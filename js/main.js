@@ -7,21 +7,6 @@ var $navLogo = document.querySelector('#logo-img');
 var $appName = document.querySelector('.app-name');
 
 // view swapping function
-
-// function swapViews(event) {
-//   var dataViewValue = event.target.getAttribute('data-view');
-//   if (dataViewValue === null) {
-//     return;
-//   }
-//   for (var i = 0; i < $allViews.length; i++) {
-//     if ($allViews[i].getAttribute('data-view') === dataViewValue) {
-//       $allViews[i].className = 'view';
-//     } else {
-//       $allViews[i].className = 'view hidden';
-//     }
-//   }
-// }
-
 function swapViews(view) {
   for (var i = 0; i < $views.length; i++) {
     if ($views[i].getAttribute('data-view') === view) {
