@@ -98,3 +98,7 @@ body {
 .fa-plus:hover {
   color: #ee8132;
 }
+
+.fa-plus:active {
+  color: white;
+}
