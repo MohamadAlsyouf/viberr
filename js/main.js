@@ -25,14 +25,16 @@ function showHomePage() {
   swapViews('home-page');
 }
 
-// function likeArtist(event) {
-//   var dataArtistIdNum = parseInt(event.target.getAttribute('data-entry-id'));
-//   data.like = dataArtistIdNum;
-//   for (var i = 0; i < data.artists.length; i++) {
-//     if (data.like === data.artists[i].id)
-//     data.likedArtists.unshift(theArtist);
-//   }
-// }
+// handle like icon function
+function likeArtist(event) {
+  var dataArtistIdNum = parseInt(event.target.getAttribute('data-artist-id'));
+  for (var i = 0; i < data.artists.length; i++) {
+    if (dataArtistIdNum === data.artists[i].id) {
+      $resultsRow.children[i].remove();
+      data.artists.splice(data.artists[i], 1);
+    }
+  }
+}
 
 // handle submit function
 function handleSubmit(event) {
@@ -105,3 +107,4 @@ document.addEventListener('DOMContentLoaded', appendDOM);
 $genreList.addEventListener('click', showArtistSearch);
 $navLogo.addEventListener('click', showHomePage);
 $appName.addEventListener('click', showHomePage);
+document.addEventListener('click', likeArtist);
