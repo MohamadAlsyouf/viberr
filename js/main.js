@@ -31,6 +31,7 @@ function likeArtist(event) {
   for (var i = 0; i < data.artists.length; i++) {
     if (dataArtistIdNum === data.artists[i].id) {
       $resultsRow.children[i].remove();
+      data.likedArtists.push(data.artists[i]);
       data.artists.splice(data.artists[i], 1);
     }
   }
