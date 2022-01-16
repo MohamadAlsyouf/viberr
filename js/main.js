@@ -2,7 +2,7 @@ var $searchForm = document.querySelector('#search-form');
 var $vibesMessage = document.querySelector('.vibes-message');
 var $resultsRow = document.querySelector('.results-row');
 var $views = document.querySelectorAll('.view');
-var $genreBox = document.querySelector('.genre');
+var $genreList = document.querySelector('#genre-list');
 var $navLogo = document.querySelector('#logo-img');
 var $appName = document.querySelector('.app-name');
 
@@ -25,6 +25,15 @@ function showHomePage() {
   swapViews('home-page');
 }
 
+// function likeArtist(event) {
+//   var dataArtistIdNum = parseInt(event.target.getAttribute('data-entry-id'));
+//   data.like = dataArtistIdNum;
+//   for (var i = 0; i < data.artists.length; i++) {
+//     if (data.like === data.artists[i].id)
+//     data.likedArtists.unshift(theArtist);
+//   }
+// }
+
 // handle submit function
 function handleSubmit(event) {
   event.preventDefault();
@@ -36,6 +45,11 @@ function handleSubmit(event) {
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     var similarArtists = xhr.response.Similar.Results;
+    for (var i in similarArtists) {
+      similarArtists[i].id = data.nextArtistId;
+      data.nextArtistId++;
+    }
+
     data.artists = similarArtists;
     appendDOM(data.artists);
   });
@@ -43,25 +57,27 @@ function handleSubmit(event) {
 }
 
 // generate DOM function
-function generateArtistDOM(object) {
+function generateArtistDOM(artistObject) {
 
   var artistBox = document.createElement('div');
   artistBox.className = 'column-third video-box';
+  artistBox.setAttribute('data-artist-id', artistObject.id);
   $resultsRow.appendChild(artistBox);
 
   var artistName = document.createElement('p');
   artistName.className = 'row artist-name';
-  artistName.textContent = object.Name;
+  artistName.textContent = artistObject.Name;
   artistBox.appendChild(artistName);
 
   var plusIcon = document.createElement('i');
   plusIcon.className = 'fas fa-plus';
+  plusIcon.setAttribute('data-artist-id', artistObject.id);
   artistName.appendChild(plusIcon);
 
   var artistVideo = document.createElement('iFrame');
   artistVideo.className = 'column-full';
   artistVideo.setAttribute('height', '205');
-  artistVideo.setAttribute('src', object.yUrl);
+  artistVideo.setAttribute('src', artistObject.yUrl);
   artistBox.appendChild(artistVideo);
 
   return artistBox;
@@ -86,6 +102,6 @@ function appendDOM(object) {
 // event listeners
 $searchForm.addEventListener('submit', handleSubmit);
 document.addEventListener('DOMContentLoaded', appendDOM);
-$genreBox.addEventListener('click', showArtistSearch);
+$genreList.addEventListener('click', showArtistSearch);
 $navLogo.addEventListener('click', showHomePage);
 $appName.addEventListener('click', showHomePage);
