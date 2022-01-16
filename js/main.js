@@ -25,7 +25,7 @@ function showHomePage() {
   swapViews('home-page');
 }
 
-// handle like icon function
+// handle liked Artists function
 function likeArtist(event) {
   var dataArtistIdNum = parseInt(event.target.getAttribute('data-artist-id'));
   for (var i = 0; i < data.artists.length; i++) {
