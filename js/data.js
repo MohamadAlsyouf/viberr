@@ -2,6 +2,7 @@
 var data = {
   view: 'genres',
   artists: [],
+  likedArtists: [],
   editing: null,
   nextArtistId: 1
 };

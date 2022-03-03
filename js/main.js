@@ -36,7 +36,7 @@ function handleSubmit(event) {
   xhr.send();
 }
 
-// generate DOM function
+// generate DOM function for Artist Search
 function generateArtistDOM(object) {
 
   var artistBox = document.createElement('div');
@@ -57,7 +57,7 @@ function generateArtistDOM(object) {
   return artistBox;
 }
 
-// append DOM function
+// append Artist Search DOM function
 function appendDOM(object) {
   var validArtists = 0;
   for (var i = 0; i < data.artists.length; i++) {
@@ -72,6 +72,38 @@ function appendDOM(object) {
     }
   }
 }
+
+// generate DOM function for Liked Artists
+// function generateLikedArtistsDOM(object) {
+
+//   var artistBox = document.createElement('div');
+//   artistBox.className = 'column-third video-box';
+//   $resultsRow.appendChild(artistBox);
+
+//   var artistName = document.createElement('p');
+//   artistName.className = 'artist-name';
+//   artistName.textContent = object.Name;
+//   artistBox.appendChild(artistName);
+
+//   var artistVideo = document.createElement('iFrame');
+//   artistVideo.className = 'column-full';
+//   artistVideo.setAttribute('height', '205');
+//   artistVideo.setAttribute('src', object.yUrl);
+//   artistBox.appendChild(artistVideo);
+
+//   return artistBox;
+// }
+
+// append LIKED Artists DOM function
+// function appendLikedArtistsDOM(object) {
+//   for (var i = 0; i < data.likedArtists.length; i++) {
+//     if (data.artists[i].yUrl === null) {
+//       continue;
+//     } else {
+//       generateLikedArtistsDOM(data.likedArtists[i]);
+//     }
+//   }
+// }
 
 // event listeners
 document.addEventListener('click', swapViews);
