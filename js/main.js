@@ -1,20 +1,38 @@
 var $searchForm = document.querySelector('#search-form');
 var $vibesMessage = document.querySelector('.vibes-message');
 var $resultsRow = document.querySelector('.results-row');
-var $allViews = document.querySelectorAll('.view');
+var $views = document.querySelectorAll('.view');
+var $genreList = document.querySelector('#genre-list');
+var $navLogo = document.querySelector('#logo-img');
+var $appName = document.querySelector('.app-name');
 
 // view swapping function
-
-function swapViews(event) {
-  var dataViewValue = event.target.getAttribute('data-view');
-  if (dataViewValue === null) {
-    return;
-  }
-  for (var i = 0; i < $allViews.length; i++) {
-    if ($allViews[i].getAttribute('data-view') === dataViewValue) {
-      $allViews[i].className = 'view';
+function swapViews(view) {
+  for (var i = 0; i < $views.length; i++) {
+    if ($views[i].getAttribute('data-view') === view) {
+      $views[i].classList.remove('hidden');
     } else {
-      $allViews[i].className = 'view hidden';
+      $views[i].classList.add('hidden');
+    }
+  }
+}
+
+function showArtistSearch() {
+  swapViews('artist-search');
+}
+
+function showHomePage() {
+  swapViews('home-page');
+}
+
+// handle liked Artists function
+function likeArtist(event) {
+  var dataArtistIdNum = parseInt(event.target.getAttribute('data-artist-id'));
+  for (var i = 0; i < data.artists.length; i++) {
+    if (dataArtistIdNum === data.artists[i].id) {
+      $resultsRow.children[i].remove();
+      data.likedArtists.push(data.artists[i]);
+      data.artists.splice(data.artists[i], 1);
     }
   }
 }
@@ -30,6 +48,11 @@ function handleSubmit(event) {
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     var similarArtists = xhr.response.Similar.Results;
+    for (var i in similarArtists) {
+      similarArtists[i].id = data.nextArtistId;
+      data.nextArtistId++;
+    }
+
     data.artists = similarArtists;
     appendDOM(data.artists);
   });
@@ -37,21 +60,27 @@ function handleSubmit(event) {
 }
 
 // generate DOM function
-function generateArtistDOM(object) {
+function generateArtistDOM(artistObject) {
 
   var artistBox = document.createElement('div');
   artistBox.className = 'column-third video-box';
+  artistBox.setAttribute('data-artist-id', artistObject.id);
   $resultsRow.appendChild(artistBox);
 
   var artistName = document.createElement('p');
-  artistName.className = 'artist-name';
-  artistName.textContent = object.Name;
+  artistName.className = 'row artist-name';
+  artistName.textContent = artistObject.Name;
   artistBox.appendChild(artistName);
+
+  var plusIcon = document.createElement('i');
+  plusIcon.className = 'fas fa-plus';
+  plusIcon.setAttribute('data-artist-id', artistObject.id);
+  artistName.appendChild(plusIcon);
 
   var artistVideo = document.createElement('iFrame');
   artistVideo.className = 'column-full';
   artistVideo.setAttribute('height', '205');
-  artistVideo.setAttribute('src', object.yUrl);
+  artistVideo.setAttribute('src', artistObject.yUrl);
   artistBox.appendChild(artistVideo);
 
   return artistBox;
@@ -74,6 +103,9 @@ function appendDOM(object) {
 }
 
 // event listeners
-document.addEventListener('click', swapViews);
 $searchForm.addEventListener('submit', handleSubmit);
 document.addEventListener('DOMContentLoaded', appendDOM);
+$genreList.addEventListener('click', showArtistSearch);
+$navLogo.addEventListener('click', showHomePage);
+$appName.addEventListener('click', showHomePage);
+document.addEventListener('click', likeArtist);

@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/layout.css">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==">
 </head>
 <body>
   <header class="dark-orange">
@@ -16,8 +19,8 @@
       <div class="row">
         <div class="column-full">
           <div class="row align-items-center">
-            <img data-view="genres" id="logo-img" src="images/viberr-logo.png" alt="viberr-logo">
-            <h2 data-view="genres" class="header-name">Viberr</h2>
+            <img data-view="home-page" id="logo-img" src="images/viberr-logo.png" alt="viberr-logo">
+            <h2 data-view="home-page" class="app-name">Viberr</h2>
           </div>
         </div>
       </div>
@@ -25,13 +28,13 @@
   </header>
   <main>
     <div class="container">
-      <div data-view="genres" class="view">
+      <div data-view="home-page" class="view">
         <div class="row">
           <div class="column-full">
             <h3 class="page-title">Genre</h3>
           </div>
         </div>
-        <div class="row">
+        <div id="genre-list" class="row">
           <div class="column-half image-padding genre">
             <img class="column-full img-border-radius" src="images/classic-genre.jpeg" alt="classical-music" data-view="artist-search">
             <p class="column-half genre-name" data-view="artist-search">Classical</p>
