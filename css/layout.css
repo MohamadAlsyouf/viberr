@@ -38,6 +38,10 @@
   text-align: center;
 }
 
+.space-between {
+  justify-content: space-between;
+}
+
 .image-padding {
   padding-left: 10px;
   padding-right: 10px;

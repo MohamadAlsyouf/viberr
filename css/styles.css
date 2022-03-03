@@ -7,7 +7,7 @@ body {
   background-color: #ee8132;
 }
 
-.header-name {
+.app-name {
   margin: 0;
   padding-top: 10px;
   color: #1e5192;
@@ -83,9 +83,32 @@ body {
 .artist-name {
   color: #f59a4f;
   font-size: 21px;
+  justify-content: space-between;
 }
 
 .artist-ul {
   list-style: none;
   padding: 0;
+}
+
+.fa-plus {
+  cursor: pointer;
+}
+
+.fa-plus:hover {
+  color: #ee8132;
+}
+
+.fa-plus:active {
+  color: white;
+}
+
+.artist-nav {
+  text-decoration: none;
+  font-size: xx-large;
+  color: #1e5192;
+}
+
+.artist-nav:hover {
+  color: #0d1e2f;
 }
