@@ -33,6 +33,7 @@ const showLikedArtists = () => {
 };
 
 // handle liked Artists function
+
 const likeArtist = event => {
   const dataArtistIdNum = parseInt(event.target.getAttribute('data-artist-id'));
   if (event.target.className === 'fas fa-plus') {
@@ -40,7 +41,7 @@ const likeArtist = event => {
       if (dataArtistIdNum === data.artists[i].id) {
         const theLikedArtistDOM = generateLikedArtistsDOM(data.artists[i]);
         $likedArtistsRow.appendChild(theLikedArtistDOM);
-        $resultsRow.children[i].remove();
+        event.target.closest('.video-box').remove();
         data.likedArtists.push(data.artists[i]);
       }
     }
@@ -112,16 +113,16 @@ const appendDOM = object => {
 };
 
 // generate DOM function for Liked Artists
-const generateLikedArtistsDOM = artistObject => {
+const generateLikedArtistsDOM = likedArtistObject => {
 
-  const artistBox = document.createElement('div');
-  artistBox.className = 'column-third video-box';
-  $likedArtistsRow.appendChild(artistBox);
+  const likedArtistBox = document.createElement('div');
+  likedArtistBox.className = 'column-third video-box';
+  $likedArtistsRow.appendChild(likedArtistBox);
 
   const artistName = document.createElement('p');
   artistName.className = 'artist-name';
-  artistName.textContent = artistObject.Name;
-  artistBox.appendChild(artistName);
+  artistName.textContent = likedArtistObject.Name;
+  likedArtistBox.appendChild(artistName);
 
   // !!!!!!!!!!!!!!!!!!!!!! MAKE THIS A TRASH CAN ICON
   // var plusIcon = document.createElement('i');
@@ -132,10 +133,10 @@ const generateLikedArtistsDOM = artistObject => {
   const artistVideo = document.createElement('iFrame');
   artistVideo.className = 'column-full';
   artistVideo.setAttribute('height', '205');
-  artistVideo.setAttribute('src', artistObject.yUrl);
-  artistBox.appendChild(artistVideo);
+  artistVideo.setAttribute('src', likedArtistObject.yUrl);
+  likedArtistBox.appendChild(artistVideo);
 
-  return artistBox;
+  return likedArtistBox;
 };
 
 // event listeners
