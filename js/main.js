@@ -123,7 +123,7 @@ const generateLikedArtistsDOM = artistObject => {
   artistName.textContent = artistObject.Name;
   artistBox.appendChild(artistName);
 
-  // !!!!!!!!!!!!!!!!!!!!!! MAKE THIS A TRASH CAN ICON !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  // !!!!!!!!!!!!!!!!!!!!!! MAKE THIS A TRASH CAN ICON
   // var plusIcon = document.createElement('i');
   // plusIcon.className = 'fas fa-plus';
   // plusIcon.setAttribute('data-artist-id', artistObject.id);
@@ -152,8 +152,3 @@ $navLogo.addEventListener('click', showHomePage);
 $appName.addEventListener('click', showHomePage);
 document.addEventListener('click', likeArtist);
 $likedArtists.addEventListener('click', showLikedArtists);
-
-//
-//
-//
-// ISSUES !!!!!!!
