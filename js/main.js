@@ -120,15 +120,14 @@ const generateLikedArtistsDOM = likedArtistObject => {
   $likedArtistsRow.appendChild(likedArtistBox);
 
   const artistName = document.createElement('p');
-  artistName.className = 'artist-name';
+  artistName.className = 'row artist-name';
   artistName.textContent = likedArtistObject.Name;
   likedArtistBox.appendChild(artistName);
 
-  // !!!!!!!!!!!!!!!!!!!!!! MAKE THIS A TRASH CAN ICON
-  // var plusIcon = document.createElement('i');
-  // plusIcon.className = 'fas fa-plus';
-  // plusIcon.setAttribute('data-artist-id', artistObject.id);
-  // artistName.appendChild(plusIcon);
+  var minusIcon = document.createElement('i');
+  minusIcon.className = 'fa-solid fa-minus';
+  minusIcon.setAttribute('data-artist-id', likedArtistObject.id);
+  artistName.appendChild(minusIcon);
 
   const artistVideo = document.createElement('iFrame');
   artistVideo.className = 'column-full';

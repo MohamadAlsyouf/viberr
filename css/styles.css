@@ -93,14 +93,15 @@ body {
 
 .fa-plus {
   cursor: pointer;
+  font-size: x-large;
 }
 
 .fa-plus:hover {
-  color: #ee8132;
+  color: white;
 }
 
 .fa-plus:active {
-  color: white;
+  color: #ee8132;
 }
 
 .artist-nav {
@@ -111,4 +112,17 @@ body {
 
 .artist-nav:hover {
   color: #0d1e2f;
+}
+
+.fa-minus {
+  cursor: pointer;
+  font-size: x-large;
+}
+
+.fa-minus:hover {
+  color: white;
+}
+
+.fa-minus:active {
+  color: #ee8132;
 }
