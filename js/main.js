@@ -9,7 +9,6 @@ const $appName = document.querySelector('.app-name');
 const $likedArtists = document.querySelector('.artist-nav');
 const $likedArtistsRow = document.querySelector('.liked-artists-row');
 
-// view swapping function
 const swapViews = view => {
   for (let i = 0; i < $views.length; i++) {
     if ($views[i].getAttribute('data-view') === view) {
@@ -32,9 +31,7 @@ const showLikedArtists = () => {
   swapViews('liked-artists');
 };
 
-// handle liked Artists function
-
-const likeArtist = event => {
+const addOrRemoveArtist = event => {
   const dataArtistIdNum = parseInt(event.target.getAttribute('data-artist-id'));
   if (event.target.className === 'fas fa-plus') {
     for (let i = 0; i < data.artists.length; i++) {
@@ -46,9 +43,16 @@ const likeArtist = event => {
       }
     }
   }
+  if (event.target.className === 'fas fa-minus') {
+    for (let i = 0; i < data.likedArtists.length; i++) {
+      if (dataArtistIdNum === data.likedArtists[i].id) {
+        event.target.closest('.video-box').remove();
+        data.likedArtists.splice(data.likedArtists[i], 1);
+      }
+    }
+  }
 };
 
-// handle submit function
 const handleSubmit = event => {
   event.preventDefault();
   $vibesMessage.textContent = 'Similar Vibes';
@@ -69,7 +73,6 @@ const handleSubmit = event => {
   xhr.send();
 };
 
-// generate DOM function for Artist Search
 const generateArtistDOM = artistObject => {
 
   const artistBox = document.createElement('div');
@@ -96,7 +99,6 @@ const generateArtistDOM = artistObject => {
   return artistBox;
 };
 
-// append Artist Search DOM function
 const appendDOM = object => {
   let validArtists = 0;
   for (let i = 0; i < data.artists.length; i++) {
@@ -112,7 +114,6 @@ const appendDOM = object => {
   }
 };
 
-// generate DOM function for Liked Artists
 const generateLikedArtistsDOM = likedArtistObject => {
 
   const likedArtistBox = document.createElement('div');
@@ -125,7 +126,7 @@ const generateLikedArtistsDOM = likedArtistObject => {
   likedArtistBox.appendChild(artistName);
 
   var minusIcon = document.createElement('i');
-  minusIcon.className = 'fa-solid fa-minus';
+  minusIcon.className = 'fas fa-minus';
   minusIcon.setAttribute('data-artist-id', likedArtistObject.id);
   artistName.appendChild(minusIcon);
 
@@ -138,7 +139,6 @@ const generateLikedArtistsDOM = likedArtistObject => {
   return likedArtistBox;
 };
 
-// event listeners
 $searchForm.addEventListener('submit', handleSubmit);
 document.addEventListener('DOMContentLoaded', () => {
   appendDOM();
@@ -150,5 +150,5 @@ document.addEventListener('DOMContentLoaded', () => {
 $genreList.addEventListener('click', showArtistSearch);
 $navLogo.addEventListener('click', showHomePage);
 $appName.addEventListener('click', showHomePage);
-document.addEventListener('click', likeArtist);
+document.addEventListener('click', addOrRemoveArtist);
 $likedArtists.addEventListener('click', showLikedArtists);
