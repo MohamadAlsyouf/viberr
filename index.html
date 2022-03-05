@@ -18,9 +18,15 @@
     <div class="container">
       <div class="row">
         <div class="column-full">
-          <div class="row align-items-center">
-            <img data-view="home-page" id="logo-img" src="images/viberr-logo.png" alt="viberr-logo">
-            <h2 data-view="home-page" class="app-name">Viberr</h2>
+          <div class="row align-items-center space-between">
+            <h2 data-view="home-page" class="app-name">
+              <img
+              data-view="home-page"
+              id="logo-img"
+              src="images/viberr-logo.png"
+              alt="viberr-logo">
+              Viberr</h2>
+            <a data-view="liked-artists" class="artist-nav" href="#">Artists</a>
           </div>
         </div>
       </div>
@@ -82,7 +88,6 @@
           <div class="column-full text-align-center">
             <p class="vibes-message column-full">Add Some Vibes To Your Archives</p>
           </div>
-
           <div class="column-full">
             <ul class="artist-ul">
               <li>
@@ -93,10 +98,33 @@
               </li>
             </ul>
           </div>
-
         </div>
       </div>
     </div>
+
+    <!-- LIKED ARTISTS LIKED ARTISTS LIKED ARTISTS VIEW VIEW VIEW -->
+    <div class="container">
+      <div data-view="liked-artists" class="view hidden">
+        <div class="row">
+          <div class="column-full">
+            <h3 class="page-title">Liked Artists</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column-full">
+            <ul class="liked-artist-ul">
+              <li>
+                <div class="column-full">
+                  <div id="add" class="row liked-artists-row">
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

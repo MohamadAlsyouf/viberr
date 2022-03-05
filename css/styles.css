@@ -102,3 +102,13 @@ body {
 .fa-plus:active {
   color: white;
 }
+
+.artist-nav {
+  text-decoration: none;
+  font-size: xx-large;
+  color: #1e5192;
+}
+
+.artist-nav:hover {
+  color: #0d1e2f;
+}
