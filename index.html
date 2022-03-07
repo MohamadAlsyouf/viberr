@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AJAX Project</title>
+  <title>Viberr</title>
   <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -19,13 +19,13 @@
       <div class="row">
         <div class="column-full">
           <div class="row align-items-center space-between">
-            <h2 data-view="home-page" class="app-name">
+            <h1 data-view="home-page" class="app-name">
               <img
               data-view="home-page"
               id="logo-img"
               src="images/viberr-logo.png"
               alt="viberr-logo">
-              Viberr</h2>
+              Viberr</h1>
             <a data-view="liked-artists" class="artist-nav" href="#">Artists</a>
           </div>
         </div>
@@ -37,7 +37,7 @@
       <div data-view="home-page" class="view">
         <div class="row">
           <div class="column-full">
-            <h3 class="page-title">Genre</h3>
+            <h1 class="page-title">Genre</h1>
           </div>
         </div>
         <div id="genre-list" class="row">
@@ -72,7 +72,7 @@
       <div data-view="artist-search" class="view hidden">
         <div class="row">
           <div class="column-full">
-            <h3 class="page-title">Artist Search</h3>
+            <h1 class="page-title">Artist Search</h1>
           </div>
         </div>
         <form id="search-form">
@@ -86,7 +86,18 @@
         <div class="row">
           <div class="column-full text-align-center">
             <p class="vibes-message column-full">Add Some Vibes To Your Archives</p>
+            <!-- Loading Spinner Classes -->
+            <!-- SET HIDDEN CLASS ON THIS DIV ONCE RESULTS COME THRU -->
+            <div id="loadSpinner" class="hidden">
+              <div class="ldio-mpfig5gfwfi">
+                <div></div>
+              </div>
+            </div>
+            <div class="network-err hidden">
+              <span>Sorry, there was an error connecting to the network! <br /> Please check your internet connection and try again.</span>
+            </div>
           </div>
+
           <div class="column-full">
             <ul class="artist-ul">
               <li>
@@ -104,7 +115,7 @@
       <div data-view="liked-artists" class="view hidden">
         <div class="row">
           <div class="column-full">
-            <h3 class="page-title">Liked Artists</h3>
+            <h1 class="page-title">Liked Artists</h1>
           </div>
           <div id="no-artists" class="column-full no-artists">
             <p>Artist List Empty!</p>

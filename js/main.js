@@ -9,6 +9,8 @@ const $appName = document.querySelector('.app-name');
 const $likedArtists = document.querySelector('.artist-nav');
 const $likedArtistsRow = document.querySelector('.liked-artists-row');
 const $emptyArtistsText = document.querySelector('.no-artists');
+const $networkError = document.querySelector('.network-err');
+const $loadSpinner = document.querySelector('#loadSpinner');
 
 const swapViews = view => {
   data.view = view;
@@ -67,6 +69,7 @@ const addOrRemoveArtist = event => {
 
 const handleSubmit = event => {
   if (data.artists.length === 10) return;
+  $loadSpinner.className = 'loadingio-spinner-rolling-sz6x1e80f7m';
   event.preventDefault();
   $vibesMessage.textContent = 'Similar Vibes';
   const name = $searchForm.elements.q.value;
@@ -74,13 +77,26 @@ const handleSubmit = event => {
   const targetUrl = encodeURIComponent('https://tastedive.com/api/similar?k=429885-Bootcamp-CY4UKJN5&limit=10&type=music&info=1&q=');
   xhr.open('GET', 'https://lfz-cors.herokuapp.com/?url=' + targetUrl + name);
   xhr.responseType = 'json';
+  xhr.addEventListener('error', error => {
+    console.error(error);
+    $loadSpinner.className = 'hidden';
+    $networkError.className = 'network-err';
+    $vibesMessage.className = 'hidden';
+  });
   xhr.addEventListener('load', () => {
+    $loadSpinner.className = 'hidden';
     const similarArtists = xhr.response.Similar.Results;
     for (const i in similarArtists) {
       similarArtists[i].id = data.nextArtistId;
       data.nextArtistId++;
     }
     data.artists = similarArtists;
+    if (data.artists.length === 0) {
+      $loadSpinner.className = 'hidden';
+      $networkError.className = 'network-err';
+      $networkError.textContent =
+      `No search results for ${name}. \n Please check your spelling or enter a new artist!`;
+    }
     appendDOM(data.artists);
   });
   xhr.send();
