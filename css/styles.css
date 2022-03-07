@@ -105,6 +105,7 @@ body {
 }
 
 .artist-nav {
+  margin-top: 17px;
   text-decoration: none;
   font-size: xx-large;
   color: #1e5192;
