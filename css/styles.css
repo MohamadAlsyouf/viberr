@@ -93,17 +93,19 @@ body {
 
 .fa-plus {
   cursor: pointer;
+  font-size: x-large;
 }
 
 .fa-plus:hover {
-  color: #ee8132;
-}
-
-.fa-plus:active {
   color: white;
 }
 
+.fa-plus:active {
+  color: #ee8132;
+}
+
 .artist-nav {
+  margin-top: 17px;
   text-decoration: none;
   font-size: xx-large;
   color: #1e5192;
@@ -111,4 +113,28 @@ body {
 
 .artist-nav:hover {
   color: #0d1e2f;
+}
+
+.fa-minus {
+  cursor: pointer;
+  font-size: x-large;
+}
+
+.fa-minus:hover {
+  color: white;
+}
+
+.fa-minus:active {
+  color: #ee8132;
+}
+
+.no-artists {
+  color: #f59a4f;
+  text-align: center;
+  font-size: 21px;
+}
+
+.liked-artist-ul {
+  list-style: none;
+  padding: 0;
 }

@@ -1,13 +1,9 @@
 .hidden {
   display: none !important;
-
-  /* visibility: hidden; */
 }
 
 .view {
   display: contents;
-
-  /* visibility: visible; */
 }
 
 .container {

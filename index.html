@@ -9,9 +9,9 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/layout.css">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" crossorigin="anonymous"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <header class="dark-orange">
@@ -68,7 +68,6 @@
         </div>
       </div>
     </div>
-
     <div class="container">
       <div data-view="artist-search" class="view hidden">
         <div class="row">
@@ -101,13 +100,14 @@
         </div>
       </div>
     </div>
-
-    <!-- LIKED ARTISTS LIKED ARTISTS LIKED ARTISTS VIEW VIEW VIEW -->
     <div class="container">
       <div data-view="liked-artists" class="view hidden">
         <div class="row">
           <div class="column-full">
             <h3 class="page-title">Liked Artists</h3>
+          </div>
+          <div id="no-artists" class="column-full no-artists">
+            <p>Artist List Empty!</p>
           </div>
         </div>
         <div class="row">
@@ -124,7 +124,6 @@
         </div>
       </div>
     </div>
-
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

@@ -8,9 +8,10 @@ const $navLogo = document.querySelector('#logo-img');
 const $appName = document.querySelector('.app-name');
 const $likedArtists = document.querySelector('.artist-nav');
 const $likedArtistsRow = document.querySelector('.liked-artists-row');
+const $emptyArtistsText = document.querySelector('.no-artists');
 
-// view swapping function
 const swapViews = view => {
+  data.view = view;
   for (let i = 0; i < $views.length; i++) {
     if ($views[i].getAttribute('data-view') === view) {
       $views[i].classList.remove('hidden');
@@ -32,9 +33,7 @@ const showLikedArtists = () => {
   swapViews('liked-artists');
 };
 
-// handle liked Artists function
-
-const likeArtist = event => {
+const addOrRemoveArtist = event => {
   const dataArtistIdNum = parseInt(event.target.getAttribute('data-artist-id'));
   if (event.target.className === 'fas fa-plus') {
     for (let i = 0; i < data.artists.length; i++) {
@@ -44,12 +43,30 @@ const likeArtist = event => {
         event.target.closest('.video-box').remove();
         data.likedArtists.push(data.artists[i]);
       }
+      if (data.likedArtists.length !== 0) {
+        $emptyArtistsText.className = 'hidden';
+      } else {
+        $emptyArtistsText.className = 'column-full no-artists';
+      }
+    }
+  }
+  if (event.target.className === 'fas fa-minus') {
+    for (let i = 0; i < data.likedArtists.length; i++) {
+      if (dataArtistIdNum === data.likedArtists[i].id) {
+        data.likedArtists.splice(i, 1);
+        event.target.closest('.column-third.video-box').remove();
+      }
+    }
+    if (data.likedArtists.length !== 0) {
+      $emptyArtistsText.className = 'hidden';
+    } else {
+      $emptyArtistsText.className = 'column-full no-artists';
     }
   }
 };
 
-// handle submit function
 const handleSubmit = event => {
+  if (data.artists.length === 10) return;
   event.preventDefault();
   $vibesMessage.textContent = 'Similar Vibes';
   const name = $searchForm.elements.q.value;
@@ -69,9 +86,7 @@ const handleSubmit = event => {
   xhr.send();
 };
 
-// generate DOM function for Artist Search
 const generateArtistDOM = artistObject => {
-
   const artistBox = document.createElement('div');
   artistBox.className = 'column-third video-box';
   artistBox.setAttribute('data-artist-id', artistObject.id);
@@ -96,7 +111,6 @@ const generateArtistDOM = artistObject => {
   return artistBox;
 };
 
-// append Artist Search DOM function
 const appendDOM = object => {
   let validArtists = 0;
   for (let i = 0; i < data.artists.length; i++) {
@@ -112,23 +126,20 @@ const appendDOM = object => {
   }
 };
 
-// generate DOM function for Liked Artists
 const generateLikedArtistsDOM = likedArtistObject => {
-
   const likedArtistBox = document.createElement('div');
   likedArtistBox.className = 'column-third video-box';
   $likedArtistsRow.appendChild(likedArtistBox);
 
   const artistName = document.createElement('p');
-  artistName.className = 'artist-name';
+  artistName.className = 'row artist-name';
   artistName.textContent = likedArtistObject.Name;
   likedArtistBox.appendChild(artistName);
 
-  // !!!!!!!!!!!!!!!!!!!!!! MAKE THIS A TRASH CAN ICON
-  // var plusIcon = document.createElement('i');
-  // plusIcon.className = 'fas fa-plus';
-  // plusIcon.setAttribute('data-artist-id', artistObject.id);
-  // artistName.appendChild(plusIcon);
+  var minusIcon = document.createElement('i');
+  minusIcon.className = 'fas fa-minus';
+  minusIcon.setAttribute('data-artist-id', likedArtistObject.id);
+  artistName.appendChild(minusIcon);
 
   const artistVideo = document.createElement('iFrame');
   artistVideo.className = 'column-full';
@@ -139,9 +150,9 @@ const generateLikedArtistsDOM = likedArtistObject => {
   return likedArtistBox;
 };
 
-// event listeners
 $searchForm.addEventListener('submit', handleSubmit);
 document.addEventListener('DOMContentLoaded', () => {
+  swapViews(data.view);
   appendDOM();
   for (let i = 0; i < data.likedArtists.length; i++) {
     const theLikedArtistDOM = generateLikedArtistsDOM(data.likedArtists[i]);
@@ -151,5 +162,5 @@ document.addEventListener('DOMContentLoaded', () => {
 $genreList.addEventListener('click', showArtistSearch);
 $navLogo.addEventListener('click', showHomePage);
 $appName.addEventListener('click', showHomePage);
-document.addEventListener('click', likeArtist);
+document.addEventListener('click', addOrRemoveArtist);
 $likedArtists.addEventListener('click', showLikedArtists);
