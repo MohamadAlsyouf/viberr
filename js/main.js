@@ -8,6 +8,7 @@ const $navLogo = document.querySelector('#logo-img');
 const $appName = document.querySelector('.app-name');
 const $likedArtists = document.querySelector('.artist-nav');
 const $likedArtistsRow = document.querySelector('.liked-artists-row');
+const $emptyArtistsText = document.querySelector('.no-artists');
 
 const swapViews = view => {
   for (let i = 0; i < $views.length; i++) {
@@ -41,6 +42,11 @@ const addOrRemoveArtist = event => {
         event.target.closest('.video-box').remove();
         data.likedArtists.push(data.artists[i]);
       }
+      if (data.likedArtists.length !== 0) {
+        $emptyArtistsText.className = 'hidden';
+      } else {
+        $emptyArtistsText.className = 'column-full no-artists';
+      }
     }
   }
   if (event.target.className === 'fas fa-minus') {
@@ -50,10 +56,16 @@ const addOrRemoveArtist = event => {
         data.likedArtists.splice(data.likedArtists[i], 1);
       }
     }
+    if (data.likedArtists.length !== 0) {
+      $emptyArtistsText.className = 'hidden';
+    } else {
+      $emptyArtistsText.className = 'column-full no-artists';
+    }
   }
 };
 
 const handleSubmit = event => {
+  if (data.artists.length === 10) return;
   event.preventDefault();
   $vibesMessage.textContent = 'Similar Vibes';
   const name = $searchForm.elements.q.value;

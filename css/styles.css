@@ -126,3 +126,14 @@ body {
 .fa-minus:active {
   color: #ee8132;
 }
+
+.no-artists {
+  color: #f59a4f;
+  text-align: center;
+  font-size: 21px;
+}
+
+.liked-artist-ul {
+  list-style: none;
+  padding: 0;
+}
