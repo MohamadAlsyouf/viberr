@@ -52,8 +52,8 @@ const addOrRemoveArtist = event => {
   if (event.target.className === 'fas fa-minus') {
     for (let i = 0; i < data.likedArtists.length; i++) {
       if (dataArtistIdNum === data.likedArtists[i].id) {
-        event.target.closest('.video-box').remove();
-        data.likedArtists.splice(data.likedArtists[i], 1);
+        data.likedArtists.splice(i, 1);
+        event.target.closest('.column-third.video-box').remove();
       }
     }
     if (data.likedArtists.length !== 0) {
