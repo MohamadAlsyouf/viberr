@@ -10,7 +10,11 @@
     "required-attr": true,
     "invalid-attr": true,
     "landmark-roles": true,
-    "required-h1": false,
+    "required-h1": {
+      "option": {
+        "expected-once": false
+      }
+    },
     "wai-aria": true,
     "class-naming": "/.+/",
     "attr-equal-space-after": true,

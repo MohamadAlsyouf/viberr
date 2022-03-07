@@ -180,3 +180,10 @@ body {
   backface-visibility: hidden;
   transform-origin: 0 0;
 }
+
+.network-err {
+  color: #f59a4f;
+  margin-top: 100px;
+  font-size: 21px;
+  white-space: pre-wrap;
+}
