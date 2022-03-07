@@ -49,6 +49,7 @@
   border-radius: 10px;
 }
 
+/* tablet */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 1000px;
@@ -56,6 +57,9 @@
 
   .page-title {
     text-align: center;
+    color: #f59a4f;
+    font-size: 40px;
+    margin: 40px 5px 50px;
   }
 
   .column-third,
@@ -74,5 +78,45 @@
 
   .video-box {
     padding: 0 15px;
+  }
+
+  .image-padding {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 120px;
+    border-radius: 10px;
+    margin-top: 35px;
+  }
+}
+
+/* tablet landscape */
+@media screen and (min-width: 1024px) {
+  .page-title {
+    color: #f59a4f;
+    font-size: 40px;
+    margin: 40px 5px 20px;
+  }
+
+  .image-padding {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 1200px) {
+  .page-title {
+    color: #f59a4f;
+    font-size: 40px;
+    margin: 40px 5px;
+  }
+
+  .image-padding {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 50px;
+    border-radius: 10px;
   }
 }
