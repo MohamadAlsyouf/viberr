@@ -11,6 +11,7 @@ const $likedArtistsRow = document.querySelector('.liked-artists-row');
 const $emptyArtistsText = document.querySelector('.no-artists');
 
 const swapViews = view => {
+  data.view = view;
   for (let i = 0; i < $views.length; i++) {
     if ($views[i].getAttribute('data-view') === view) {
       $views[i].classList.remove('hidden');
@@ -86,7 +87,6 @@ const handleSubmit = event => {
 };
 
 const generateArtistDOM = artistObject => {
-
   const artistBox = document.createElement('div');
   artistBox.className = 'column-third video-box';
   artistBox.setAttribute('data-artist-id', artistObject.id);
@@ -127,7 +127,6 @@ const appendDOM = object => {
 };
 
 const generateLikedArtistsDOM = likedArtistObject => {
-
   const likedArtistBox = document.createElement('div');
   likedArtistBox.className = 'column-third video-box';
   $likedArtistsRow.appendChild(likedArtistBox);
@@ -153,6 +152,7 @@ const generateLikedArtistsDOM = likedArtistObject => {
 
 $searchForm.addEventListener('submit', handleSubmit);
 document.addEventListener('DOMContentLoaded', () => {
+  swapViews(data.view);
   appendDOM();
   for (let i = 0; i < data.likedArtists.length; i++) {
     const theLikedArtistDOM = generateLikedArtistsDOM(data.likedArtists[i]);
