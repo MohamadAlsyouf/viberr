@@ -2,7 +2,7 @@
 
 A front-end JavaScript application for music lovers and enthusiasts who want to discover similar artists.
 
-I built Viberr because I wanted a quick and effective way to find similar artists to those I have been listening to and enjoying. What I loved most about this project was the fact that I could utilize what I've learned so far to help solve a problem that I myself had, being an avid music lover constantly eager to discover artists. Music is a staple in my life, and I was excited to build an application and learn new technologies such as AJAX and working with API’s to not only increase the quality of my life, but the quality of others’ as well.
+I built Viberr because I wanted a quick and effective way to find similar artists to those I have been listening to and enjoying, without having to create an account or purchase a subscription to discover new artists. What I loved most about this application was the fact that I could demonstrate what I've learned so far to help solve a problem that I had, being an avid music lover constantly eager to explore new sounds. Using Viberr, I have discovered a plethora of new artists and bands that very accurately represent the vibe I had been searching for.
 
 ## Technologies Used
 
