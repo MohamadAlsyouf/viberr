@@ -45,11 +45,7 @@ const addOrRemoveArtist = event => {
         event.target.closest('.video-box').remove();
         data.likedArtists.push(data.artists[i]);
       }
-      if (data.likedArtists.length !== 0) {
-        $emptyArtistsText.className = 'hidden';
-      } else {
-        $emptyArtistsText.className = 'column-full no-artists';
-      }
+      checkEmpty();
     }
   }
   if (event.target.className === 'fas fa-minus') {
@@ -59,11 +55,15 @@ const addOrRemoveArtist = event => {
         event.target.closest('.column-third.video-box').remove();
       }
     }
-    if (data.likedArtists.length !== 0) {
-      $emptyArtistsText.className = 'hidden';
-    } else {
-      $emptyArtistsText.className = 'column-full no-artists';
-    }
+    checkEmpty();
+  }
+};
+
+const checkEmpty = () => {
+  if (data.likedArtists.length !== 0) {
+    $emptyArtistsText.className = 'hidden';
+  } else {
+    $emptyArtistsText.className = 'column-full no-artists';
   }
 };
 
@@ -170,6 +170,7 @@ $searchForm.addEventListener('submit', handleSubmit);
 document.addEventListener('DOMContentLoaded', () => {
   swapViews(data.view);
   appendDOM();
+  checkEmpty();
   for (let i = 0; i < data.likedArtists.length; i++) {
     const theLikedArtistDOM = generateLikedArtistsDOM(data.likedArtists[i]);
     $likedArtistsRow.appendChild(theLikedArtistDOM);

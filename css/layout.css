@@ -7,7 +7,7 @@
 }
 
 .container {
-  max-width: 575px;
+  max-width: 35.938rem;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -39,27 +39,27 @@
 }
 
 .image-padding {
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 50px;
-  border-radius: 10px;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  margin-bottom: 3.125rem;
+  border-radius: 0.625rem;
 }
 
 .img-border-radius {
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }
 
 /* tablet */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 1000px;
+    max-width: 62.5rem;
   }
 
   .page-title {
     text-align: center;
     color: #f59a4f;
-    font-size: 40px;
-    margin: 40px 5px 50px;
+    font-size: 2.5rem;
+    margin: 2.5rem 0.313rem 3.125rem;
   }
 
   .column-third,
@@ -69,23 +69,23 @@
 
   .search-box {
     border: none;
-    font-size: 20px;
-    border-radius: 5px 0 0 5px;
-    padding-left: 10px;
+    font-size: 1.25rem;
+    border-radius: 0.313rem 0 0 0.313rem;
+    padding-left: 0.625rem;
     color: #0d1e2f;
     width: 50%;
   }
 
   .video-box {
-    padding: 0 15px;
+    padding: 0 0.938rem;
   }
 
   .image-padding {
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 120px;
-    border-radius: 10px;
-    margin-top: 35px;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    margin-bottom: 7.5rem;
+    border-radius: 0.625rem;
+    margin-top: 2.188rem;
   }
 }
 
@@ -93,15 +93,15 @@
 @media screen and (min-width: 1024px) {
   .page-title {
     color: #f59a4f;
-    font-size: 40px;
-    margin: 40px 5px 20px;
+    font-size: 2.5rem;
+    margin: 2.5rem 0.313rem 1.25rem;
   }
 
   .image-padding {
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 15px;
-    border-radius: 10px;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    margin-bottom: 0.938rem;
+    border-radius: 0.625rem;
   }
 }
 
@@ -109,14 +109,14 @@
 @media screen and (min-width: 1200px) {
   .page-title {
     color: #f59a4f;
-    font-size: 40px;
-    margin: 40px 5px;
+    font-size: 2.5rem;
+    margin: 2.5rem 0.313rem;
   }
 
   .image-padding {
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 50px;
-    border-radius: 10px;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    margin-bottom: 3.125rem;
+    border-radius: 0.625rem;
   }
 }
