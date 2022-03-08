@@ -37,9 +37,6 @@ Try the application live at https://mohamadalsyouf.github.io/viberr/
 
 ## Development
 
-### System Requirements
-- Browser
-
 ### Getting Started
 
 1. Clone the repository.
