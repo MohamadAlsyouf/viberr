@@ -9,7 +9,7 @@ I built Viberr because I wanted a quick and effective way to find similar artist
 - JavaScript
 - HTML5
 - CSS3
-- TasteDive API
+- [TasteDive API](https://tastedive.com/read/api)
 - XMLHttpRequest
 - Local Storage
 
