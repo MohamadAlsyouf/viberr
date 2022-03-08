@@ -30,7 +30,7 @@ Try the application live at https://mohamadalsyouf.github.io/viberr/
 ![readMe gif 2](https://user-images.githubusercontent.com/93749120/157176334-30b7744d-cc7d-4ba6-9cae-fcf608aab7d0.gif)
 
 
-## Stretch Features
+## Stretch Features I'd like to implement
 
 - Users can create a playlist to add artists to.
 - Users can add a note for each liked artist.
