@@ -14,10 +14,11 @@ Try the application live at [https://mohamadalsyouf.github.io/Viberr/]
 
 ## Features
 
-- Users can view a list of recorded grades.
-- Users can view the average grade.
-- Users can add a grade to the table.
-- Users can delete a grade from the table.
+- Users can search for similar artists.
+- Users can view a list of similar artists with music videos
+- Users can add an artist to their list of liked artists.
+- Users can view a list of their Liked Artists.
+- Users can delete an artist from their Liked Artists list.
 
 ## Preview
 
