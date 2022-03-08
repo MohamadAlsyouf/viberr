@@ -33,7 +33,7 @@ Try the application live at [https://mohamadalsyouf.github.io/Viberr/]
 1. Clone the repository.
 
     ```shell
-<!--     git clone git@github.com:MohamadAlsyouf/Viberr.git -->
+    git clone git@github.com:MohamadAlsyouf/Viberr.git
     cd Viberr
     ```
 
