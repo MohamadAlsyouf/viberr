@@ -2,7 +2,6 @@ const $searchForm = document.querySelector('#search-form');
 const $vibesMessage = document.querySelector('.vibes-message');
 const $resultsRow = document.querySelector('.results-row');
 const $views = document.querySelectorAll('.view');
-
 const $genreList = document.querySelector('#genre-list');
 const $navLogo = document.querySelector('#logo-img');
 const $appName = document.querySelector('.app-name');
@@ -11,61 +10,6 @@ const $likedArtistsRow = document.querySelector('.liked-artists-row');
 const $emptyArtistsText = document.querySelector('.no-artists');
 const $networkError = document.querySelector('.network-err');
 const $loadSpinner = document.querySelector('#loadSpinner');
-
-const swapViews = view => {
-  data.view = view;
-  for (let i = 0; i < $views.length; i++) {
-    if ($views[i].getAttribute('data-view') === view) {
-      $views[i].classList.remove('hidden');
-    } else {
-      $views[i].classList.add('hidden');
-    }
-  }
-};
-
-const showArtistSearch = () => {
-  swapViews('artist-search');
-};
-
-const showHomePage = () => {
-  swapViews('home-page');
-};
-
-const showLikedArtists = () => {
-  swapViews('liked-artists');
-};
-
-const addOrRemoveArtist = event => {
-  const dataArtistIdNum = parseInt(event.target.getAttribute('data-artist-id'));
-  if (event.target.className === 'fas fa-plus') {
-    for (let i = 0; i < data.artists.length; i++) {
-      if (dataArtistIdNum === data.artists[i].id) {
-        const theLikedArtistDOM = generateLikedArtistsDOM(data.artists[i]);
-        $likedArtistsRow.appendChild(theLikedArtistDOM);
-        event.target.closest('.video-box').remove();
-        data.likedArtists.push(data.artists[i]);
-      }
-      checkEmpty();
-    }
-  }
-  if (event.target.className === 'fas fa-minus') {
-    for (let i = 0; i < data.likedArtists.length; i++) {
-      if (dataArtistIdNum === data.likedArtists[i].id) {
-        data.likedArtists.splice(i, 1);
-        event.target.closest('.column-third.video-box').remove();
-      }
-    }
-    checkEmpty();
-  }
-};
-
-const checkEmpty = () => {
-  if (data.likedArtists.length !== 0) {
-    $emptyArtistsText.className = 'hidden';
-  } else {
-    $emptyArtistsText.className = 'column-full no-artists';
-  }
-};
 
 const handleSubmit = event => {
   if (data.artists.length === 10) return;
@@ -166,7 +110,67 @@ const generateLikedArtistsDOM = likedArtistObject => {
   return likedArtistBox;
 };
 
+const addOrRemoveArtist = event => {
+  const dataArtistIdNum = parseInt(event.target.getAttribute('data-artist-id'));
+  if (event.target.className === 'fas fa-plus') {
+    for (let i = 0; i < data.artists.length; i++) {
+      if (dataArtistIdNum === data.artists[i].id) {
+        const theLikedArtistDOM = generateLikedArtistsDOM(data.artists[i]);
+        $likedArtistsRow.appendChild(theLikedArtistDOM);
+        event.target.closest('.video-box').remove();
+        data.likedArtists.push(data.artists[i]);
+      }
+      checkEmpty();
+    }
+  }
+  if (event.target.className === 'fas fa-minus') {
+    for (let i = 0; i < data.likedArtists.length; i++) {
+      if (dataArtistIdNum === data.likedArtists[i].id) {
+        data.likedArtists.splice(i, 1);
+        event.target.closest('.column-third.video-box').remove();
+      }
+    }
+    checkEmpty();
+  }
+};
+
+const checkEmpty = () => {
+  if (data.likedArtists.length !== 0) {
+    $emptyArtistsText.className = 'hidden';
+  } else {
+    $emptyArtistsText.className = 'column-full no-artists';
+  }
+};
+
+const swapViews = view => {
+  data.view = view;
+  for (let i = 0; i < $views.length; i++) {
+    if ($views[i].getAttribute('data-view') === view) {
+      $views[i].classList.remove('hidden');
+    } else {
+      $views[i].classList.add('hidden');
+    }
+  }
+};
+
+const showArtistSearch = () => {
+  swapViews('artist-search');
+};
+
+const showHomePage = () => {
+  swapViews('home-page');
+};
+
+const showLikedArtists = () => {
+  swapViews('liked-artists');
+};
+
 $searchForm.addEventListener('submit', handleSubmit);
+$genreList.addEventListener('click', showArtistSearch);
+$navLogo.addEventListener('click', showHomePage);
+$appName.addEventListener('click', showHomePage);
+document.addEventListener('click', addOrRemoveArtist);
+$likedArtists.addEventListener('click', showLikedArtists);
 document.addEventListener('DOMContentLoaded', () => {
   swapViews(data.view);
   appendDOM();
@@ -176,8 +180,3 @@ document.addEventListener('DOMContentLoaded', () => {
     $likedArtistsRow.appendChild(theLikedArtistDOM);
   }
 });
-$genreList.addEventListener('click', showArtistSearch);
-$navLogo.addEventListener('click', showHomePage);
-$appName.addEventListener('click', showHomePage);
-document.addEventListener('click', addOrRemoveArtist);
-$likedArtists.addEventListener('click', showLikedArtists);
