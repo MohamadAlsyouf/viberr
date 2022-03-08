@@ -24,6 +24,12 @@ Try the application live at https://mohamadalsyouf.github.io/Viberr/
 ![readMe gif 1](https://user-images.githubusercontent.com/93749120/157151154-5acdb0c7-a95b-4fb6-8a96-0c955487fe59.gif)
 ![readMe gif 2](https://user-images.githubusercontent.com/93749120/157151476-29a8ac1a-bf81-4254-b609-d17864acb582.gif)
 
+## Stretch Features
+
+- Users can create a playlist to add artists to.
+- Users can add a note for each liked artist.
+- Users can edit a liked artist's YouTube URL.
+
 ## Development
 
 ### System Requirements
