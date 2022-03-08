@@ -21,8 +21,8 @@ Try the application live at https://mohamadalsyouf.github.io/Viberr/
 - Users can delete an artist from their Liked Artists list.
 
 ## Preview
-
-<!-- ![SGT React](assets/sgt-react.gif) -->
+![readMe gif 1](https://user-images.githubusercontent.com/93749120/157151154-5acdb0c7-a95b-4fb6-8a96-0c955487fe59.gif)
+![readMe gif 2](https://user-images.githubusercontent.com/93749120/157151476-29a8ac1a-bf81-4254-b609-d17864acb582.gif)
 
 ## Development
 
