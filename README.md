@@ -10,7 +10,7 @@ A front-end JavaScript application for music lovers and enthusiasts who want to 
 
 ## Live Demo
 
-Try the application live at [https://mohamadalsyouf.github.io/Viberr/]
+Try the application live at https://mohamadalsyouf.github.io/Viberr/
 
 ## Features
 
