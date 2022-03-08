@@ -14,10 +14,10 @@ Try the application live at [https://mohamadalsyouf.github.io/Viberr/]
 
 ## Features
 
-- Teachers can view a list of recorded grades.
-- Teachers can view the average grade.
-- Teachers can add a grade to the table.
-- Teachers can delete a grade from the table.
+- Users can view a list of recorded grades.
+- Users can view the average grade.
+- Users can add a grade to the table.
+- Users can delete a grade from the table.
 
 ## Preview
 
@@ -26,18 +26,15 @@ Try the application live at [https://mohamadalsyouf.github.io/Viberr/]
 ## Development
 
 ### System Requirements
-
-- Node.js 10 or higher
-- NPM 6 or higher
-- MongoDB 4 or higher
+- Browser
 
 ### Getting Started
 
 1. Clone the repository.
 
     ```shell
-<!--     git clone https://github.com/Learning-Fuze/sgt-react -->
-    cd sgt-react
+<!--     git clone git@github.com:MohamadAlsyouf/Viberr.git -->
+    cd Viberr
     ```
 
 1. Install all dependencies with NPM.
@@ -45,15 +42,5 @@ Try the application live at [https://mohamadalsyouf.github.io/Viberr/]
     ```shell
     npm install
     ```
-
-1. Import the example database to MongoDB.
-
-    ```shell
-    mongoimport --db sgt-react database/dump.json
-    ```
-
-<!-- 1. Start the project. Once started you can view the application by opening http://localhost:3000 in your browser. -->
-
-    ```shell
-    npm run dev
-    ```
+    
+<!-- 1. Start the project. Once started you can view the application by opening your index.html file with default browser.
