@@ -14,7 +14,7 @@ I built Viberr because I wanted a quick and effective way to find similar artist
 
 ## Live Demo
 
-Try the application live at https://mohamadalsyouf.github.io/Viberr/
+Try the application live at https://mohamadalsyouf.github.io/viberr/
 
 ## Features
 
