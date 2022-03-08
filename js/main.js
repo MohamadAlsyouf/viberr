@@ -162,6 +162,11 @@ const showArtistSearch = () => {
 
 const showHomePage = () => {
   swapViews('home-page');
+  if (data.artists.length !== 0) {
+    while ($resultsRow.firstChild) $resultsRow.firstChild.remove();
+    data.artists = [];
+    $searchForm.elements.q.value = null;
+  }
 };
 
 const showLikedArtists = () => {
