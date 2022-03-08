@@ -26,7 +26,8 @@ Try the application live at https://mohamadalsyouf.github.io/viberr/
 
 ## Preview
 ![readMe gif 1](https://user-images.githubusercontent.com/93749120/157151154-5acdb0c7-a95b-4fb6-8a96-0c955487fe59.gif)
-![readMe gif 2](https://user-images.githubusercontent.com/93749120/157151476-29a8ac1a-bf81-4254-b609-d17864acb582.gif)
+![readMe gif 2](https://user-images.githubusercontent.com/93749120/157176334-30b7744d-cc7d-4ba6-9cae-fcf608aab7d0.gif)
+
 
 ## Stretch Features
 
