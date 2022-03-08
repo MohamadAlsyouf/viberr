@@ -1,6 +1,6 @@
 # Viberr
 
-A full stack JavaScript application for teachers who want to manage course records.
+A front-end JavaScript application for music lovers and enthusiasts who want to discover similar artists.
 
 ## Technologies Used
 
