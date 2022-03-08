@@ -43,4 +43,4 @@ Try the application live at [https://mohamadalsyouf.github.io/Viberr/]
     npm install
     ```
     
-<!-- 1. Start the project. Once started you can view the application by opening your index.html file with default browser.
+1. Start the project. Once started you can view the application by opening your index.html file with default browser.
