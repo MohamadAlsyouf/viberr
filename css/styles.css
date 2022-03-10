@@ -58,7 +58,6 @@ a {
 }
 
 .search-button {
-  /* margin-left: -0.25rem; */
   margin-top: 1rem;
   height: 2.5rem;
   border: 0;
@@ -167,7 +166,6 @@ a {
 }
 
 .loadingio-spinner-rolling-sz6x1e80f7m {
-  /* SET HIDDEN AS CLASS FOR THIS ONCE RESULTS COME THRU */
   width: 12.5rem;
   height: 12.5rem;
   display: inline-block;
