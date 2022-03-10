@@ -50,9 +50,10 @@ a {
 
 .search-button {
   border: none;
-  height: 100%;
+  height: 2.5rem;
   font-size: 1.313rem;
-  margin-left: -0.25rem;
+
+  /* margin-left: -0.25rem; */
   background-color: #f59a4f;
   vertical-align: top;
   border-radius: 0 0.313rem 0.313rem 0;
