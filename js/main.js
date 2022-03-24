@@ -16,6 +16,7 @@ const handleSubmit = event => {
     while ($resultsRow.firstChild) $resultsRow.firstChild.remove();
     data.artists = [];
   }
+  $networkError.className = 'network-err hidden';
   $loadSpinner.className = 'loadingio-spinner-rolling-sz6x1e80f7m';
   event.preventDefault();
   $vibesMessage.textContent = 'Similar Vibes';
