@@ -43,6 +43,23 @@
       "rules": {
         "character-reference": false
       }
+    },
+    {
+      "selector": "meta[property]",
+      "rules": {
+        "invalid-attr": {
+          "option": {
+            "attrs": {
+              "property": {
+                "type": "Any"
+              },
+              "content": {
+                "type": "Any"
+              }
+            }
+          }
+        }
+      }
     }
   ],
   "childNodeRules": [

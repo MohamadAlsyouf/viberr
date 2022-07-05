@@ -26,8 +26,15 @@ a {
 .page-title {
   color: #f59a4f;
   font-size: 2.5rem;
-  margin: 2.5rem 0.313rem 1.563rem;
+  margin: 2.5rem 0.313rem 1rem;
   text-align: center;
+}
+
+.pick-one {
+  text-align: center;
+  color: #f59a4f;
+  font-size: 1.3rem;
+  margin: 0 0.313rem 1.563rem;
 }
 
 .genre:hover img {
