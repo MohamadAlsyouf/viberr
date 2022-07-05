@@ -43,7 +43,7 @@ const handleSubmit = event => {
       $loadSpinner.className = 'hidden';
       $networkError.className = 'network-err';
       $networkError.textContent =
-      `No search results for ${name}. \n Please check your spelling or enter a new artist!`;
+      `No search results for '${name}'. \n Please check your spelling or enter a new artist!`;
     }
     appendDOM(data.artists);
   });
