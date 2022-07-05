@@ -163,6 +163,7 @@ const showArtistSearch = () => {
 
 const showHomePage = () => {
   swapViews('home-page');
+  $vibesMessage.textContent = 'Add Some Vibes To Your Archives';
   if (data.artists.length !== 0) {
     while ($resultsRow.firstChild) $resultsRow.firstChild.remove();
     data.artists = [];
