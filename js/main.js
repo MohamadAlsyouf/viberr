@@ -115,26 +115,42 @@ const generateLikedArtistsDOM = likedArtistObject => {
 };
 
 const addOrRemoveArtist = event => {
-  const dataArtistIdNum = parseInt(event.target.getAttribute('data-artist-id'));
   if (event.target.className === 'fas fa-plus') {
-    for (let i = 0; i < data.artists.length; i++) {
-      if (dataArtistIdNum === data.artists[i].id) {
-        const theLikedArtistDOM = generateLikedArtistsDOM(data.artists[i]);
-        $likedArtistsRow.appendChild(theLikedArtistDOM);
-        event.target.closest('.video-box').remove();
-        data.likedArtists.push(data.artists[i]);
-      }
-      checkEmpty();
-    }
+    checkIfLiked();
+    checkEmpty();
   }
   if (event.target.className === 'fas fa-minus') {
-    for (let i = 0; i < data.likedArtists.length; i++) {
-      if (dataArtistIdNum === data.likedArtists[i].id) {
-        data.likedArtists.splice(i, 1);
-        event.target.closest('.column-third.video-box').remove();
-      }
-    }
+    removeArtist();
     checkEmpty();
+  }
+};
+
+const checkIfLiked = () => {
+  const dataArtistIdNum = parseInt(event.target.getAttribute('data-artist-id'));
+  for (let i = 0; i < data.artists.length; i++) {
+    if (dataArtistIdNum === data.artists[i].id) {
+      for (let j = 0; j < data.likedArtists.length; j++) {
+        if (data.artists[i].Name !== data.likedArtists[j].Name) {
+          continue;
+        } else if (data.artists[i].Name === data.likedArtists[j].Name) {
+          return;
+        }
+      }
+      const theLikedArtistDOM = generateLikedArtistsDOM(data.artists[i]);
+      $likedArtistsRow.appendChild(theLikedArtistDOM);
+      event.target.closest('.video-box').remove();
+      data.likedArtists.push(data.artists[i]);
+    }
+  }
+};
+
+const removeArtist = () => {
+  const dataArtistIdNum = parseInt(event.target.getAttribute('data-artist-id'));
+  for (let i = 0; i < data.likedArtists.length; i++) {
+    if (dataArtistIdNum === data.likedArtists[i].id) {
+      data.likedArtists.splice(i, 1);
+      event.target.closest('.column-third.video-box').remove();
+    }
   }
 };
 
